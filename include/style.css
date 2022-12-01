@@ -1,0 +1,36 @@
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+
+.text p, .text pre, .text ul, .text ol, .text dt, .text dd, .text td {font-size: 18px;}
+
+@media (min-width: 1480px) {
+    .text {
+      margin-left: -250px;
+    }
+}
+
+@media (max-width: 640px) {
+    .text pre {
+      margin: 0 -16px;
+    }
+}
+ 
+
+footer a {text-decoration: none;}
+
+::-webkit-scrollbar-thumb {
+  background: #e47e7e; /* цвет фона у дорожки */
+  border-radius: 8px; /* скругление углов */
+  border: 3px solid #f5cdcd; /* толщина, стиль и цвет рамки */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b91414; /* ползунок меняет цвет при наведении */
+}
