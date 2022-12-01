@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Составной оператор | Язык Паскаль</title>
+<meta name="description" content="Язык Паскаль был создан Виртом в конце 60-х для обучения программированию. Однако позже, несмотря на свою простоту, стал использоваться в практических целях, так как поддерживал передовые для того времени парадигмы программирования.">
+
+<link rel="shortcut icon" href="include/favicon.ico">
+<link rel="stylesheet" href="include/w3.css">
+<link rel="stylesheet" href="include/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="include/prism/prism-coy.css">
+<script src="include/jquery.min.js"></script>
+<link rel="stylesheet" href="include/style.css">
+
+</head>
+
+<body>
+<!--------------------------------------------- Верхняя полоса ---------------------------->
+<div class="w3-top" style="z-index:3;">
+  <div class="w3-bar w3-theme-l1 w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="../index.html" class="w3-bar-item w3-button w3-theme-l1"><img src="include/logo.png" style="margin-right:10px;" width="23" height="23">Pascal<span class="w3-hide-small">. Основы программирования</span></a>
+    <a href="../login/login.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-right">Вход</a>
+    <a href="/pascaltask2" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-right">Сложные</a>
+    <a href="/pascaltask1" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-right">Средние</a>
+    <a href="/pascaltask" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-right">Простые задачи</a>
+
+  </div>
+</div>
+
+<!---------------------------------------------- Боковой бар ------------------------------->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Теория</b></h4>
+
+  <div class="w3-bar-item w3-button" onclick="accordion('base')">
+  Введение <i class="fa fa-caret-down"></i></div>
+  <div id="base" class="w3-hide w3-white w3-card-4">
+    <a href="../introduction/programing.html" class="w3-bar-item w3-button">Начало программирования на языке Pascal</a>
+    <a href="../introduction/pascalhistory.html" class="w3-bar-item w3-button">История языка Pascal</a>
+  </div>
+
+  <div class="w3-bar-item w3-button" onclick="accordion('variables')">
+  Переменные и операторы в <br> языке Pascal. <br>Структура программы <i class="fa fa-caret-down"></i></div>
+  <div id="variables" class="w3-hide w3-white w3-card-4">
+    <a href="../variables/alphabet.html" class="w3-bar-item w3-button">Алфавит языка Паскаль. Переменные. Типы переменных</a>
+    <a href="../variables/operators.html" class="w3-bar-item w3-button">Операторы присваивания. <br>Оператор ввода-вывода. <br>Арифметические операции.</a>
+    <a href="../variables/structure.html" class="w3-bar-item w3-button">Структура программы</a>
+  </div>
+
+  <div class="w3-bar-item w3-button" onclick="accordion('algorithms')">
+  Разветвляющие алгоритмы	<i class="fa fa-caret-down"></i></div>
+  <div id="algorithms" class="w3-hide w3-white w3-card-4">
+    <a href="../compoundop.html" class="w3-bar-item w3-button">Составной оператор</a>
+    <a href="../choptionop.html" class="w3-bar-item w3-button">Оператор варианта выбора</a>
+  </div>
+
+  <div class="w3-bar-item w3-button" onclick="accordion('cycles')">
+  Циклы <i class="fa fa-caret-down"></i></div>
+  <div id="cycles" class="w3-hide w3-white w3-card-4">
+    <a href="../cycles/cyclic.html" class="w3-bar-item w3-button">Циклический алгоритм</a>
+    <a href="../cycles/for.html" class="w3-bar-item w3-button">Цикл с параметром «For»</a>
+    <a href="../cycles/while.html" class="w3-bar-item w3-button">Цикл с предусловием WHILE</a>
+    <a href="../cycles/repeat.html" class="w3-bar-item w3-button">Оператор цикла с постусловием Repeat</a>
+    <a href="../cycles/vlcic.html" class="w3-bar-item w3-button">Вложенные циклы</a>
+  </div>
+
+  <div class="w3-bar-item w3-button" onclick="accordion('types')">
+  Типы, определенные пользователем	<i class="fa fa-caret-down"></i></div>
+  <div id="types" class="w3-hide w3-white w3-card-4">
+    <a href="../types/chapter.html" class="w3-bar-item w3-button">Раздел описания типов</a>
+    <a href="../types/datatype.html" class="w3-bar-item w3-button">Перечисляемый тип данных</a>
+  </div>
+
+  <div class="w3-bar-item w3-button" onclick="accordion('mass')">
+ Массивы <br>Структура программы <i class="fa fa-caret-down"></i></div>
+  <div id="mass" class="w3-hide w3-white w3-card-4">
+    <a href="../mass/odnmass.html" class="w3-bar-item w3-button">Одномерные массивы</a>
+    <a href="../mass/dwmass.html" class="w3-bar-item w3-button">Двумерные массивы</a>
+    <a href="../mass/simmass.html" class="w3-bar-item w3-button">Обработка символьных массивов</a>
+  </div>
+
+    <div class="w3-bar-item w3-button" onclick="accordion('proc')">
+  Процедуры и функции <i class="fa fa-caret-down"></i></div>
+  <div id="proc" class="w3-hide w3-white w3-card-4">
+    <a href="../proc/proc.html" class="w3-bar-item w3-button">Процедура в Паскале и ее формат</a>
+    <a href="../proc/funcs.html" class="w3-bar-item w3-button">Функции</a>
+  </div>
+
+  
+  <h4 class="w3-bar-item"><b>Задачи по темам</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/linealgorithm">Линейные алгоритмы</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/tasksif">Условные операторы</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/taskcycle">Циклы</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/taskarray">Массивы</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/taskmatrix">Матрицы</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/taskstring">Строки</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/taskfunc">Функции и процедуры</a>
+  
+    <div class="w3-hide-large">
+  <h4 class="w3-bar-item"><b>Задачи по уровням</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/pascaltask">Простые задачи</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/pascaltask1">Средние задачи</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/pascaltask2">Сложные задачи</a>
+  </div>
+
+</nav>
+
+<!---------------------------------------- Для малых экранов ------------------------------>
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!----------------------------- Сдвиг основного контента вправо когда видна боковая панель ---------------->
+<div class="w3-main" style="margin-left:250px;">
+
+  <div class="text">
+  <article class="w3-padding-64 w3-container w3-content">
+
+<h1 class="w3-text-teal">Составной оператор</h1>
+  
+<p palign="justify">     Составной оператор представляет собой последовательность операторов, выполняемых в том порядке, в котором они записаны в программе. Он имеет следующий вид:</p>
+
+<pre><code class="language-pascal">begin
+оператор; оператор;...оператор;
+end;
+</code></pre>
+
+
+<p align="justify">     Количество слов <strong>BEGIN</strong> совпадает с количеством слов <strong>END.</strong> Для того чтобы избежать ошибки при составлении программы, пишите каждую пару <strong>BEGIN-END</strong> с одной позиции.</p>
+
+<p align="justify">     <strong>Разветвляющий алгоритм</strong> - это алгоритм, в котором в зависимости от выполнения или невыполнения некоторого условия выполняется либо одна, либо другая последовательность действий.</p>
+
+<p align="justify">     Оператор <code class="language-pascal">if</z1></code> или условный оператор
+Условный оператор может записываться в полной и неполной
+форме. Полная форма условного оператора:
+<code class="language-pascal">if<условие> then <оператор1>
+else <оператор2></code>
+</p>
+<br>
+
+<p align="justify">
+     Обратите внимание на запись служебных слов и операторов.
+Каждое слово <code class="language-pascal">ELSE</code> пишется под своим словом <code class="language-pascal">IF</code>. Для большей
+наглядности и «читаемости» текста программы операторы,
+следующие за словом <code class="language-pascal">THEN</code> и <code class="language-pascal">ELSE</code> можно писать на следующей
+строке. Перед словом <code class="language-pascal">ELSE</code> нельзя ставить точку с запятой. 
+<br>     Условие в операторе <code class="language-pascal">IF..THEN...ELSE</code> может быть <strong>простым</strong> или <strong>сложным.</strong> 
+<br><strong>Простое условие</strong> представляет собой логическое выражение, состоящее из двух выражений одинакового типа, соединенных знаком операции отношения (>,<,>=,<>,<=). 
+<br><strong>Сложное условие</strong> состоит из простых, соединенных знаками логических операций : OR(или) NOT(не) AND (и). При этом каждое условие
+ограничено с обеих сторон круглыми скобками.
+</p>
+
+<br>
+<h3 class="w3-text-teal">Выполнение оператора IF... THEN... ELSE</h3>
+<ol>
+<li align="justify"> Проверяется: выполняется или нет условие, стоящее после слова <code class="language-pascal">IF</code>.</li>
+<li align="justify"> Если условие выполняется, т.е. значение его «истина», то выполняется оператор, стоящий после слова <code class="language-pascal">THEN</code>, а затем управление передается оператору программы, записанному после оператора 
+<br><code class="language-pascal">IF ...THEN...ELSE</code>.</li>
+<li align="justify"> Если условие оператора <code class="language-pascal">IF</code> не выполняется (т.е. оно имеет значение “ложь”), то выполняется оператор, стоящий после слова <code class="language-pascal">ELSE</code>, а затем начинает выполняться следующий после <code class="language-pascal">IF...THEN...ELSE</code> оператор.</li>
+</ol>
+
+<h3 class="w3-text-teal">Пример: <h3>
+<p align="justify"><strong>Составить программу вывода на экран большего из двух чисел.</strong></p>
+
+<pre><code class="language-pascal">PROGRAM prim1;
+USES Crt;
+var x,y : real;
+begin
+ClrScr; (* очищение экрана *)
+Writeln(‘Введите два числа’);
+Readln(x,y);
+IF x>y THEN Writeln(x)
+ELSE Writeln(y);
+end.
+</code></pre>
+
+
+<!---------------------- Конец  ---------------------------->
+</div>
+
+<script src="include/script.js"></script>
+<script src="include/prism/prism-coy.js"></script>
+</body>
+</html>
