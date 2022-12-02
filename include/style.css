@@ -24,13 +24,3 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
  
 
 footer a {text-decoration: none;}
-
-::-webkit-scrollbar-thumb {
-  background: #e47e7e; /* цвет фона у дорожки */
-  border-radius: 8px; /* скругление углов */
-  border: 3px solid #f5cdcd; /* толщина, стиль и цвет рамки */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #b91414; /* ползунок меняет цвет при наведении */
-}
